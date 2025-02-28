@@ -1,9 +1,12 @@
+import { OkResponse } from '@/core/successResponse'
 import { Router } from 'express'
 
 const authRouter = Router()
 
 authRouter.get('/login', (req, res) => {
-  res.send('Login route /api/v1/auth/login')
+  new OkResponse('Login success', {
+    accesToken: 'jkasdkjhasjkdajkshd'
+  }).send(res)
 })
 
 export default authRouter
